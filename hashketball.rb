@@ -128,8 +128,15 @@ def num_points_scored(name)
   end
 end
 
-def shoe_size
-
+def shoe_size(name)
+  hash = game_hash
+  hash.each do |location, info|
+    info.each do |attribute, stuff|
+      if stuff.include?(name)
+       return hash[location][attribute][name][:shoe_size].to_i
+      end
+    end
+  end
 end
 
 def team_colors
