@@ -131,6 +131,20 @@ end
 def shoe_size
 end
 
+def team_colors
+  hash = game_hash
+  array = []
+  hash.each do |location, attributes|
+    if hash[location].values.include?(team_name)
+      attributes.each do |attribute, info|
+        if attribute == :colors
+          return info
+        end
+      end
+    end
+  end
+end
+
 def team_names
   hash = game_hash
   array = []
