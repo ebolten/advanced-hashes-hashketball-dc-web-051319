@@ -122,13 +122,14 @@ def num_points_scored(name)
   hash.each do |location, info|
     info.each do |attribute, stuff|
       if stuff.include?(name)
-       return hash[location][attribute][name][:points]
+       return hash[location][attribute][name][:points].to_i
       end
     end
   end
 end
 
 def shoe_size
+
 end
 
 def team_colors
