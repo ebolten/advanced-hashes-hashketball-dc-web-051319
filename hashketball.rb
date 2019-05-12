@@ -178,3 +178,14 @@ def player_numbers
   end
   return array
 end
+
+def player_stats
+  hash = game_hash
+  hash.each do |location, attributes|
+    attributes.each do |attribute, info|
+      if info.include?(name)
+       return hash[location][attribute][name]
+      end
+    end
+  end
+end
